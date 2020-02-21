@@ -12,6 +12,7 @@
   background-color: white;
   padding-left: 30px;
   padding-bottom: 20px;
+  display: none;
 }
 
 #chat-area {

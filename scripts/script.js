@@ -1,28 +1,22 @@
-window.onload = function() {
-  document.getElementById("chat-button").onclick = function() { toggleHidden() };
-  document.getElementById("chat-box").getElementsByTagName("input")[0].onkeypress = function(){ enterPressed(event) };
-  var chatbox = document.getElementById("chat-box");
-  chatbox.style.display = "none";
+$(document).ready(function() {
+  $("#chat-button").click(function() { toggleHidden() });
+  $("#chat-box").find("input").keypress(function(event) { enterPressed(event) });
+});
 
-  function toggleHidden() {
-    if (chatbox.style.display == "none") {
-      chatbox.style.display = "block";
-    }
-    else {
-      chatbox.style.display = "none";
-    }
+function toggleHidden() {
+  if ($("#chat-box").is(":hidden")) {
+    $("#chat-box").show();
   }
+  else {
+    $("#chat-box").hide();
+  }
+}
 
-  function enterPressed(event) {
-    var chatbox = document.getElementById("chat-box");
-    var textbox = chatbox.getElementsByTagName("input")[0];
-    if (event.key === "Enter" && textbox.value != "") {
-      var chatarea = document.getElementById("chat-area");
-      var div = document.createElement("div");
-      div.className = "text";
-      div.textContent = "You: " + textbox.value;
-      chatarea.appendChild(div);
-      textbox.value = "";
-    }
+function enterPressed(event) {
+  var textbox = $("#chat-box").find("input");
+  if (event.key === "Enter" && textbox.val() != "") {
+    var textContent = "You: " + textbox.val();
+    $("#chat-area").append(`<div class="text">${textContent}</div>`);
+    textbox.val("");
   }
 }
