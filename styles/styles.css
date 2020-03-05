@@ -32,3 +32,9 @@
 .categoryBtn {
   background-color: yellow;
 }
+
+/* Space out the cells in the table */
+#categories {
+  border-spacing: 20px;
+  border-collapse: separate;
+}
