@@ -1,0 +1,22 @@
+[
+	{
+		"categoryName": "category 1",
+		"imageURL": "",
+		"imageAlt": "category 1 picture"
+	},
+	{
+		"categoryName": "category 2",
+		"imageURL": "",
+		"imageAlt": "category 2 picture"
+	},
+	{
+		"categoryName": "category 3",
+		"imageURL": "",
+		"imageAlt": "category 3 picture"
+	},
+	{
+		"categoryName": "category 4",
+		"imageURL": "",
+		"imageAlt": "category 4 picture"
+	}
+]
