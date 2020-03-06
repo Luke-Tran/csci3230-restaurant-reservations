@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Menu</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-        <link type="text/css" rel="stylesheet" href="../styles/styles.css" />
-    </head>
-</html>
+  <head>
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link type="text/css" rel="stylesheet" href="../styles/styles.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="../scripts/menu.js" type="text/javascript"></script>
+  </head>
+
 <body>
-    <div class="block">
-        Menu
+  <div class="block">
+    <nav class="navbar">
+      <div class="navbar-start">
+        <div class="navbar-item">
+          <img src="../assets/temp_logo.svg" alt="Restaurant Logo (svg?)" class="nav-item">
+        </div>
+        <div class="navbar-item">
+          <p>RESTAURANT NAME</p>
+        </div>
+        <div class="navbar-menu is-active">
+          <a href="#" class="navbar-item">MENU</a>
+          <a href="#" class="navbar-item">RESERVE A TABLE</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">Assessments</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item">Labs</a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">Assignments</a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="login.html" class="button is-link">Log in</a>
+        </div>
+      </div>
+    </nav>
+    Menu
     </div>
-</body>
+
+    <table id="categories"></table>
+  </body>
+</html>
