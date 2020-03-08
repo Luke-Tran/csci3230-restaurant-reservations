@@ -12,17 +12,23 @@ $(document).ready(function() {
  * Is fed json data and generates a 3-column grid from it
  */
 function addCategory(category) {
-  var categoryImg = $(`<div><img src="${category.imageURL}" alt="${category.imageAlt}" height="42" width="42"></div>`);
-  var categoryBtn = $(`<div><button class="categoryBtn">${category.categoryName}</button></div>`);
-  var content = $("<div></div>").append(categoryImg, categoryBtn);
-  var tableRows = $("#categories").find("tbody").children()
+  var grid = $('#categories');
+  var column = $('<div class="column is-one-third"></div>');
+  var cell = $('<div class="card large"></div>');
+  var imageHTML = `
+  <div class="card-image">
+    <figure class="image">
+      <img src="${category.imageURL}" alt="${category.imageAlt}" height="42" width="42">
+    </figure>
+  </div>
+  `;
+  
+  var categoryImg = $(imageHTML);
+  var content = $('<div class="card-content"></div>');
+  var categoryBtn = $(`<button class="button categoryBtn">${category.categoryName}</button>`);
+  content.append(categoryBtn);
 
-  var lastRow = tableRows.last();
-  if (lastRow.children().length >= 3 || tableRows.length == 0) {
-    var newRow = $("<tr></tr>");
-    newRow.append($("<td></td>").append(content));
-    $("#categories").append(newRow);
-  } else {
-    lastRow.append($("<td></td>").append(content));
-  }
+  cell.append(categoryImg, content);
+  column.append(cell);
+  grid.append(column);
 }
