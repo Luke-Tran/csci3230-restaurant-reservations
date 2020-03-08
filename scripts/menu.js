@@ -12,9 +12,6 @@ $(document).ready(function() {
  * Is fed json data and generates a 3-column grid from it
  */
 function addCategory(category) {
-  var grid = $('#categories');
-  var column = $('<div class="column is-one-third"></div>');
-  var cell = $('<div class="card large"></div>');
   var imageHTML = `
   <div class="card-image">
     <figure class="image">
@@ -24,11 +21,15 @@ function addCategory(category) {
   `;
   
   var categoryImg = $(imageHTML);
-  var content = $('<div class="card-content"></div>');
-  var categoryBtn = $(`<button class="button categoryBtn">${category.categoryName}</button>`);
-  content.append(categoryBtn);
+  var cardContent = $('<div class="card-content"></div>');
+  var description = $(`<div class="content">${category.description}</div>`);
+  var categoryBtn = $(`<button class="button categoryBtn is-fullwidth">${category.categoryName}</button>`);
+  cardContent.append(description, categoryBtn);
 
-  cell.append(categoryImg, content);
+  var grid = $('#categories');
+  var column = $('<div class="column is-one-third"></div>');
+  var cell = $('<div class="card large"></div>');
+  cell.append(categoryImg, cardContent);
   column.append(cell);
   grid.append(column);
 }
