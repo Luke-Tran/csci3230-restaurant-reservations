@@ -49,3 +49,36 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+/* Menu BLock CSS */
+.menu-block {
+	height: 500px;
+	background-image: url('../assets/images/poutine-close-up.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+/* Menu Block Title */
+#menu-title {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 100px;
+	top: 25%;
+}
+
+/* Menu Block Description */
+#menu-description {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 40px;
+	top: 26%;
+}
+/* Menu Block Button Css */
+.button {
+	text-align: center;
+	position: relative;
+	top: 35%;
+	left: 45%;
+}
