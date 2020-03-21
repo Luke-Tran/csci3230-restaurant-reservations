@@ -1,0 +1,22 @@
+{
+  "name": "csci3230-restaurant-reservations",
+  "version": "1.0.0",
+  "description": "**Contributors**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luke-Tran/csci3230-restaurant-reservations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luke-Tran/csci3230-restaurant-reservations/issues"
+  },
+  "homepage": "https://github.com/Luke-Tran/csci3230-restaurant-reservations#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

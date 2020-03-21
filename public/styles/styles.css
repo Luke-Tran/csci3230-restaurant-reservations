@@ -1,0 +1,196 @@
+#chat {
+  position: fixed;
+  text-align: right;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+}
+
+#chat-box {
+  text-align: left;
+  border: 1px solid black;
+  background-color: white;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  display: none;
+}
+
+#chat-area {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+#chat > button {
+  text-align: left;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 14px;
+  padding: 4px;
+  width: 60%;
+}
+
+.categoryBtn {
+  background-color: yellow;
+  /*width: 100%;*/ /*Will use Bulma's is-fullwidth instead*/
+}
+
+/* Space out the cells in the table */
+#categories {
+  border-spacing: 20px;
+  border-collapse: separate;
+}
+
+/* parallax scrolling effect */
+.parallax{
+	background-image :url('../assets/images/cn-tower-background.jpg');
+	height: 100% auto;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+
+/* Block Master CSS */
+.info-blocks {
+	height: 500px;
+	margin-top: 300px;
+	margin-bottom: 300px;
+	text-align: center;
+
+}
+
+/* Menu BLock CSS */
+#menu-block {
+	background-image: url('../assets/images/food.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+}
+
+/* Menu Block Title */
+#menu-title {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 100px;
+	top: 25%;
+}
+
+/* Menu Block Description */
+#menu-description {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 40px;
+	top: 26%;
+}
+/* Menu Block Button Css */
+#menu-block-button {
+	text-align: center;
+	position: relative;
+	top: 35%;
+}
+
+/* Reservation BLock CSS */
+#reservation-block {
+	background-image: url('../assets/images/dining2.jpeg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+/* Reservation Block Title */
+#reservation-title {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 100px;
+	top: 25%;
+}
+
+/* Reservation Block Description */
+#reservation-description {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 40px;
+	top: 26%;
+}
+/* Reservation Block Button Css */
+#reservation-block-button {
+	text-align: center;
+	position: relative;
+	top: 35%;
+}
+
+/* Contact Us BLock CSS */
+#contact-us-block {
+	background-image: url('../assets/images/waiter.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+/* Contact-Us Block Title */
+#contact-us-title {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 100px;
+	top: 25%;
+}
+
+/* Contact-Us Block Description */
+#contact-us-description {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 40px;
+	top: 26%;
+}
+/* Contact-Us Block Button Css */
+#contact-us-block-button {
+	text-align: center;
+	position: relative;
+	top: 35%;
+}
+
+/* Social Media BLock CSS */
+#social-media-block {
+	background-color: black;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	text-align: center;
+	height: 200px;
+}
+
+/* Contact-Us Block Title */
+#social-media-title {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 25px;
+	top: 25%;
+}
+
+/* List of Social Media */
+#social-media-list {
+	list-style: none;
+	padding-top: 5rem;
+	width: 100%;
+
+}
+#social-media-list li {
+	display: inline;
+	padding: 20px;
+	margin: 2;
+}
+
+/* Social Media Icons */
+.social-media-icons {
+/*	text-align: center;
+	position: relative;*/
+	height: 50px;
+	width: 50px;
+}
+
