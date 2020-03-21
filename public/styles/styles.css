@@ -72,6 +72,7 @@
 /* Menu Block Title */
 #menu-title {
 	text-align: center;
+	font-family: 'Kaushan Script', cursive;
 	position: relative;
 	color: white;
 	font-size: 100px;
@@ -81,6 +82,7 @@
 /* Menu Block Description */
 #menu-description {
 	text-align: center;
+	font-family: 'Great Vibes', cursive;
 	position: relative;
 	color: white;
 	font-size: 40px;
@@ -103,6 +105,7 @@
 /* Reservation Block Title */
 #reservation-title {
 	text-align: center;
+	font-family: 'Kaushan Script', cursive;
 	position: relative;
 	color: white;
 	font-size: 100px;
@@ -112,6 +115,7 @@
 /* Reservation Block Description */
 #reservation-description {
 	text-align: center;
+	font-family: 'Great Vibes', cursive;
 	position: relative;
 	color: white;
 	font-size: 40px;
@@ -134,6 +138,7 @@
 /* Contact-Us Block Title */
 #contact-us-title {
 	text-align: center;
+	font-family: 'Kaushan Script', cursive;
 	position: relative;
 	color: white;
 	font-size: 100px;
@@ -143,6 +148,7 @@
 /* Contact-Us Block Description */
 #contact-us-description {
 	text-align: center;
+	font-family: 'Great Vibes', cursive;
 	position: relative;
 	color: white;
 	font-size: 40px;
@@ -167,6 +173,7 @@
 /* Contact-Us Block Title */
 #social-media-title {
 	text-align: center;
+	font-family: 'Kaushan Script', cursive;
 	position: relative;
 	color: white;
 	font-size: 25px;
