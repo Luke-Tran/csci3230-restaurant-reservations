@@ -201,3 +201,12 @@
 	width: 50px;
 }
 
+
+.image img{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+    width:  200px;
+    height: 200px;
+    background-size: cover;
+}
