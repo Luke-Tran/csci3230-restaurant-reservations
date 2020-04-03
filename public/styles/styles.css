@@ -210,3 +210,9 @@
     height: 200px;
     background-size: cover;
 }
+
+h1 {
+	font-size: xx-large;
+	text-align: center;
+	text-transform: uppercase;
+  }
