@@ -92,7 +92,8 @@
 #menu-block-button {
 	text-align: center;
 	position: relative;
-	top: 35%;
+	bottom: -175px
+
 }
 
 /* Reservation BLock CSS */
@@ -125,7 +126,7 @@
 #reservation-block-button {
 	text-align: center;
 	position: relative;
-	top: 35%;
+	bottom: -175px
 }
 
 /* Contact Us BLock CSS */
@@ -158,7 +159,7 @@
 #contact-us-block-button {
 	text-align: center;
 	position: relative;
-	top: 35%;
+	bottom: -175px
 }
 
 /* Social Media BLock CSS */
@@ -231,7 +232,7 @@
 #review-us-block-button {
 	text-align: center;
 	position: relative;
-	top: 35%;
+	bottom: -175px;
 }
 
 
