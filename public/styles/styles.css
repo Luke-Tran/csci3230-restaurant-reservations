@@ -170,7 +170,9 @@
 	height: 200px;
 }
 
-/* Contact-Us Block Title */
+
+
+/* Social-Media Block Title */
 #social-media-title {
 	text-align: center;
 	font-family: 'Kaushan Script', cursive;
@@ -199,6 +201,37 @@
 	position: relative;*/
 	height: 50px;
 	width: 50px;
+}
+
+#review-us-block {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+/* review-Us Block Title */
+#review-us-title {
+	text-align: center;
+	font-family: 'Kaushan Script', cursive;
+	position: relative;
+	color: white;
+	font-size: 100px;
+	top: 25%;
+}
+
+/* Contact-Us Block Description */
+#review-us-description {
+	text-align: center;
+	font-family: 'Great Vibes', cursive;
+	position: relative;
+	color: white;
+	font-size: 40px;
+	top: 26%;
+}
+/* Contact-Us Block Button Css */
+#review-us-block-button {
+	text-align: center;
+	position: relative;
+	top: 35%;
 }
 
 

@@ -2,9 +2,17 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static('public'));
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'pug');
+
+app.get('/customerReview', function (request, response) {
+	response.render("reviewPage", { message: 'Please enter a username to  check' });
+});
+
 
 // Display homepage 
 app.get('/', (request, response) => {
@@ -23,3 +31,8 @@ app.set('port', 3000);
 app.listen(app.get('port'), () => {
 	console.log("Server is listening at port: " + app.get('port'));
 });
+
+
+
+
+

@@ -1,0 +1,29 @@
+html{
+	background-image :url('../assets/images/cn-tower-background.jpg');
+	height: 100% auto;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+form{
+	min-width:320px;
+	width:64%;
+	max-width:40em;
+	margin:10vh auto;
+	padding: none;
+
+}
+
+.title{
+	padding: 1cm;
+	text-align: center;
+	color: white;
+}
+p{
+	text-align: center;
+}
+
+.label{
+	color: white;
+}
