@@ -10,9 +10,16 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 
 app.get('/customerReview', function (request, response) {
-	response.render("reviewPage", { message: 'Please enter a username to  check' });
+	response.render("reviewPage");
 });
 
+app.get('/customerReservation', function (request, response) {
+	response.render("resPage");
+});
+
+app.post('/customerReview', function (request, response) {
+	response.render("reviewPage");
+});
 
 // Display homepage 
 app.get('/', (request, response) => {

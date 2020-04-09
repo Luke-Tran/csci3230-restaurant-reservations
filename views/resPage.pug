@@ -1,0 +1,81 @@
+doctype html
+head
+  title 
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css')
+  script(defer='' src='https://use.fontawesome.com/releases/v5.3.1/js/all.js')
+  link(type='text/css' rel='stylesheet' href='../styles/styles.css')
+  script(type='text/javascript' src='https://code.jquery.com/jquery-latest.min.js')
+  script(src='../scripts/menu.js' type='text/javascript')
+.block
+  nav.navbar
+    .navbar-start
+      .navbar-item
+        img.nav-item(src='../assets/temp_logo.svg' alt='Restaurant Logo (svg?)')
+      .navbar-item
+        a(href='/') The 6ix Eatery
+      .navbar-menu.is-active
+        a.navbar-item(href='/menu') MENU
+        
+    .navbar-end
+
+
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css')
+  script(defer='', src='https://use.fontawesome.com/releases/v5.3.1/js/all.js')
+  link(rel='stylesheet', href='styles/reservationform.css')
+h1.title Please enter the following details.
+form(method='get')
+  .field
+    label.label(for='first_name') First Name
+    input#the_name.input(type='text', name='firstname')
+  .field
+    label.label(for='last_name') Last Name
+    input#the_name.input(type='text', name='lastname')
+  
+  .field
+    label.label Number of guests?
+    .control
+      .select
+        select#no_of_guests.regular-text(name='guests')
+          option(value='one') 1
+          option(value='two') 2
+          option(value='three') 3 
+          option(value='four') 4
+          option(value='five') 5
+          option(value='six') 6 
+          option(value='seven') 7
+          option(value='eight') 8
+          option(value='nine') 9
+          option(value='ten') 10
+
+  .field
+    label.label(for='the_time') Reservation Time
+    .control
+      .select
+        select#time_slots(name='timeslot')
+          option(value='10:00')  10:00 AM
+          option(value='10:45')  10:45 AM
+          option(value='11:30')  11:30 AM
+          option(value='12:15')  12:15 AM
+          option(value='13:00')  1:00 PM
+          option(value='13:45')  1:45 PM
+          option(value='14:30')  2:30 PM
+          option(value='15:15')  3:15 PM
+          option(value='16:00')  4:00 PM
+          option(value='16:45')  4:45 PM
+          option(value='17:30')  5:30 PM
+          option(value='18:15')  6:15 PM
+          option(value='19:00')  7:00 PM
+          option(value='19:45')  7:45 PM
+          option(value='20:30')  8:30 PM
+
+         
+
+  .field
+    label.label(for='the_email') Email Address
+    input#the_email.input(type='email', name='email')
+
+
+
+  .field
+    input.button.is-primary(type="submit" value="Submit" onclick="alert('We have received your review. Thankyou!') & setTimeout(10000)")
+
