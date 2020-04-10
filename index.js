@@ -34,6 +34,11 @@ app.get('/menu', (request, response) => {
 	response.sendFile(__dirname + '/public/pages/menu.html');
 });
 
+// Display table Form for dev
+app.get('/tableForm', (request, response) => {
+	response.sendFile(__dirname + '/public/pages/tableForm.html');
+});
+
 // Set which port to use
 app.set('port', 3000);
 
