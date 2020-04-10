@@ -1,34 +1,105 @@
+/* Chat CSS */
 #chat {
   position: fixed;
   text-align: right;
   bottom: 0;
   right: 0;
   width: 350px;
+  clear:right;
 }
 
+/* Style the div where all the messages are going to be displayed */
 #chat-box {
   text-align: left;
+  width: 350px;
   border: 1px solid black;
   background-color: white;
   padding-left: 30px;
   padding-bottom: 20px;
-  display: none;
+  padding-right: 30px;
 }
 
+/* Style the div where all the messages are going to be */
 #chat-area {
   margin-top: 20px;
   margin-bottom: 30px;
+  padding-bottom: 10px;
+  max-height: 150px;
+  overflow-y: scroll;
 }
 
-#chat > button {
-  text-align: left;
-  border: 1px solid black;
-  background-color: white;
-  font-size: 14px;
-  padding: 4px;
-  width: 60%;
+/* Generic style for all the messages in the chat */
+.text {
+	border: 1px solid;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: .4rem;
+	box-shadow: 2px 2px;
 }
 
+/* Generic style for all the time attributes in the messages */
+.time {
+	font-size: 12px;
+	padding-left: 6px;
+	color: grey;
+}
+
+/* Styles the message that the server sends to the cilent */
+#server-message {
+	display: inline;
+	float: right;
+	color: #ff3860;
+}
+
+/* Style for the time attribute that the sever sends the client */
+#server-time {
+	display: inline;
+	clear: both;
+	float: right;
+}
+
+/* Style for the messages that the client sends */
+#client-message {
+	display:inline;
+}
+
+/* Style for the send icon */
+#send-icon {
+	padding-top: 20px;
+	clear:both;
+}
+
+/* Generic spacer of needed */
+.spacer {
+	clear:both;
+}
+
+/* Style of the send button */
+#chat-send-button {
+	display:inline;
+	text-align: right;
+	float:right;
+}
+
+/* Allows the send button and the input field to be in the same line */
+#input-field-div {
+	display: inline;
+}
+
+/* Style the chat banner */
+#chat-banner {
+	height: 30px;
+	width: 100%;
+	text-align: center;
+	color: white;
+	padding: 2px;
+	background-color: #ff3860;
+}
+
+/* Make the mouse change when hovering over the chat banner */
+#chat-banner:hover {
+	cursor:pointer;
+}
 .categoryBtn {
   background-color: yellow;
   /*width: 100%;*/ /*Will use Bulma's is-fullwidth instead*/
