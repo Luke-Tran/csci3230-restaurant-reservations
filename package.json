@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Luke-Tran/csci3230-restaurant-reservations#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "socket.io": "^2.3.0"
   }
 }
