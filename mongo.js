@@ -8,10 +8,9 @@ let reservationSchema = new mongoose.Schema(
 			firstName: String,
 			lastName: String,
 			phone: String,
-			email: String,
 			people: Number,
+			table: Number,
 			time: Date,
-			notifyMins: Number
 		}
 	);
 
@@ -33,15 +32,14 @@ exports.init = function() {
 	db.on('error', () => console.log(`Error: Could not connect to database at ${url}.`))
 }
 
-exports.addReservation = async function(firstName, lastName, phone, email, people, time, notifyMins) {
+exports.addReservation = async function(firstName, lastName, phone, people, table, time) {
 	let reservation = new Reservation({
 		firstName: firstName,
 		lastName: lastName,
 		phone: phone,
-		email: email,
 		people: people,
-		time: time,
-		notifyMins: notifyMins
+		table: table,
+		time: time
 	});
 
 	if(reservation !== await reservation.save()) {
@@ -76,9 +74,9 @@ exports.deleteAllReservations = async function() {
 let mongoTest = async function() {
 	mongo.init();
 
-	await mongo.addReservation("John", "Doe", "9051234567", "john.doe@gmail.com", 2, new Date("April 25, 2020 19:15:00"), 60);
-	let id = await mongo.addReservation("Randy", "Fortier", "9057218668", "randy.fortier@ontariotechu.net", 5, new Date("April 18, 2020 18:30:00"), 5);
-	await mongo.addReservation("Geoff", "Smith", "4161346795", "geoff.smith@hotmail.ca", 2, new Date("April 22, 2020 17:45:00"), -1);
+	await mongo.addReservation("John", "Doe", "9051234567", 2, , 0, new Date("April 25, 2020 19:15:00"));
+	let id = await mongo.addReservation("Randy", "Fortier", "9057218668", 5, 1, new Date("April 18, 2020 18:30:00"));
+	await mongo.addReservation("Geoff", "Smith", "4161346795", 2, 2, new Date("April 22, 2020 17:45:00"));
 
 	let result = await mongo.getReservationById(id);
 	console.log("\nSingle reservation pull for Randy Fortier:", result);
