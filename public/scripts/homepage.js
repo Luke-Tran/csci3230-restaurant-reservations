@@ -46,7 +46,8 @@ async function enterPressed(event) {
 	 	$("#chat-area").append(`<div class="time" id="client-time">${chatTime}</div>`);
 
 		// If the text is longer than the chatbox area, use CSS that wraps the text around
-		if (textbubble.width() >= 234) {
+		console.log(textbubble.width());
+		if (textbubble.width() >= 220) {
 			await changeTextBubble(textbubble, "textwrap");
 		}
 

@@ -38,6 +38,7 @@
 	display: inline;
 }
 
+/* Chat style for when the message is long enough to need word wrapping */
 .textwrap {
 	border: 1px solid;
 	padding-left: 8px;
