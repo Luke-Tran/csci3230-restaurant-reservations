@@ -1,0 +1,16 @@
+/* Style this bad boi */
+.left-side {
+	fill: blue;
+}
+
+.left-side:hover {
+	fill: red;
+}
+
+.right-side {
+	fill: blue;
+}
+
+.right-side:hover {
+	fill: red;
+}
