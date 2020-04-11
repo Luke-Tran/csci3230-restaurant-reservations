@@ -74,7 +74,7 @@ exports.deleteAllReservations = async function() {
 let mongoTest = async function() {
 	mongo.init();
 
-	await mongo.addReservation("John", "Doe", "9051234567", 2, , 0, new Date("April 25, 2020 19:15:00"));
+	await mongo.addReservation("John", "Doe", "9051234567", 2, 0, new Date("April 25, 2020 19:15:00"));
 	let id = await mongo.addReservation("Randy", "Fortier", "9057218668", 5, 1, new Date("April 18, 2020 18:30:00"));
 	await mongo.addReservation("Geoff", "Smith", "4161346795", 2, 2, new Date("April 22, 2020 17:45:00"));
 
@@ -90,4 +90,6 @@ let mongoTest = async function() {
 	console.log("\nAll reservations post delete: ", result);
 }
 
-mongoTest();
+//mongoTest();
+
+mongo.init();

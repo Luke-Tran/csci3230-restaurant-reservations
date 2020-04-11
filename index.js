@@ -3,6 +3,8 @@ let app = express();
 let bodyParser = require('body-parser');
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
+let mongo = require('./mongo');
+
 let message2 = "Hello from server";
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,8 +27,14 @@ app.get('/customerReservation', function (request, response) {
 });
 
 app.post('/customerReservation', function (request, response) {
-	console.log("here");
-	response.render("resPage");
+	mongo.addReservation(request.body.firstname, request.body.lastname, "missing", 
+		request.body.guests, 0, new Date("April 18, 2020 18:30:00"))
+	.then(res => {
+		mongo.getReservationById(res).then(res => {
+			console.log(res);
+		})
+	});
+	response.sendFile(__dirname + '/public/homepage.html');
 });
 
 // Display homepage 
