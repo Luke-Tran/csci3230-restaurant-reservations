@@ -16,12 +16,17 @@ app.get('/customerReview', function (request, response) {
 	response.render("reviewPage");
 });
 
+app.post('/customerReview', function (request, response) {
+	response.render("reviewPage");
+});
+
 app.get('/customerReservation', function (request, response) {
 	response.render("resPage");
 });
 
-app.post('/customerReview', function (request, response) {
-	response.render("reviewPage");
+app.post('/customerReservation', function (request, response) {
+	console.log("here");
+	response.render("resPage");
 });
 
 // Display homepage 

@@ -23,13 +23,13 @@ head
   script(defer='', src='https://use.fontawesome.com/releases/v5.3.1/js/all.js')
   link(rel='stylesheet', href='styles/reservationform.css')
 h1.title Please enter the following details.
-form(method='get')
+form(method='post')
   .field
     label.label(for='first_name') First Name
-    input#the_name.input(type='text', name='firstname')
+    input#the_name.input(type='text', name='firstname' required='isRequired')
   .field
     label.label(for='last_name') Last Name
-    input#the_name.input(type='text', name='lastname')
+    input#the_name.input(type='text', name='lastname' required='isRequired')
   
   .field
     label.label Number of guests?
@@ -72,10 +72,10 @@ form(method='get')
 
   .field
     label.label(for='the_email') Email Address
-    input#the_email.input(type='email', name='email')
+    input#the_email.input(type='email', name='email' required='isRequired')
 
 
 
   .field
-    input.button.is-primary(type="submit" value="Submit" onclick="alert('We have booked your reservation. Thankyou!') & setTimeout(10000)")
+    input.button.is-primary(type="submit" value="Submit" onclick="alert('We have booked your reservation. Thank you!') & setTimeout(10000)")
 
