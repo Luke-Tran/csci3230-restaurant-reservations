@@ -26,6 +26,7 @@ app.get('/customerReservation', function (request, response) {
 	response.render("resPage");
 });
 
+// Store finished reservations in database
 app.post('/customerReservation', function (request, response) {
 	mongo.addReservation(request.body.firstname, request.body.lastname, "missing", 
 		request.body.guests, 0, new Date("April 18, 2020 18:30:00"))
@@ -55,11 +56,6 @@ app.get('/tableForm', (request, response) => {
 // Set which port to use
 app.set('port', 3000);
 
-// Show which port the server is lisening at 
-// app.listen(app.get('port'), () => {
-// 	console.log("Server is listening at port: " + app.get('port'));
-// });
-
 // Set up socket IO
 io.on('connection', function(socket){
 	console.log('User Connected');
@@ -79,10 +75,7 @@ io.on('connection', function(socket){
 
 });
 
-// Show which port the server is lisening at 
-//app.listen(app.get('port'), () => {
-	//console.log("Server is listening at port: " + app.get('port'));
-//});
+
 http.listen(app.get('port'), function() {
     console.log('Listening on port ' + app.get('port'));
 });
