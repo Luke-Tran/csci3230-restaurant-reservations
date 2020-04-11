@@ -35,6 +35,16 @@
 	padding-right: 8px;
 	border-radius: .4rem;
 	box-shadow: 2px 2px;
+	display: inline;
+}
+
+.textwrap {
+	border: 1px solid;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: .4rem;
+	box-shadow: 2px 2px;
+	word-wrap: break-word;
 }
 
 /* Generic style for all the time attributes in the messages */
@@ -59,9 +69,9 @@
 }
 
 /* Style for the messages that the client sends */
-#client-message {
+/*#client-message {
 	display:inline;
-}
+}*/
 
 /* Style for the send icon */
 #send-icon {

@@ -5,9 +5,9 @@ window.onload = function() {
 	$(document).ready(function() {
 		$('#chat').hide();
 		$("#chat-box").hide();
-  		$("#contact-us-block-button").click(function() { toggleHidden() }); // show/hide chat when contact-us is pressed
+  	$("#contact-us-block-button").click(function() { toggleHidden() }); // show/hide chat when contact-us is pressed
 		$("#chat-send-button").click(function() {sendButtonPressed()}); // sends message to server when the send button is pressed
-  		$("#chat-box").find("input").keypress(function(event) { enterPressed(event) }); // sends message when enter is preswsed 
+  	$("#chat-box").find("input").keypress(function(event) { enterPressed(event) }); // sends message when enter is preswsed 
 		$("#chat-banner").click(function(){toggleHiddenActiveChat()}); // Hides chat but shows banner when the banner is clicked
 	});
 	//socket.emit('send message', "Hello From Client");
@@ -36,21 +36,39 @@ function toggleHiddenActiveChat() {
 }
 
 // Function that takes the message and sends it to the sever when the entey key is pressed 
-function enterPressed(event) {
+async function enterPressed(event) {
   var textbox = $("#chat-box").find("input");
   if (event.key === "Enter" && textbox.val() != "") {
-	 var chatTime = systemTime();
+	 	var chatTime = systemTime();
     var textContent = textbox.val();
-    $("#chat-area").append(`<div class="text" id="client-message">${textContent}</div>`);
-	 $("#chat-area").append(`<div class="time" id="client-time">${chatTime}</div>`);
-	 // Send chat message to the server
-	 socket.emit('send message', textContent);
+		var textbubble = $(`<div class="text" id="client-message">${textContent}</div>`);
+		$("#chat-area").append(textbubble);
+	 	$("#chat-area").append(`<div class="time" id="client-time">${chatTime}</div>`);
+
+		// If the text is longer than the chatbox area, use CSS that wraps the text around
+		if (textbubble.width() >= 234) {
+			await changeTextBubble(textbubble, "textwrap");
+		}
+
+	 	// Send chat message to the server
+	 	socket.emit('send message', textContent);
     textbox.val("");
-	 recieveMessage();
-	 // Auto scrolling to the bottom when something is entered
-	 var chatArea = document.getElementById("chat-area");
-	 chatArea.scrollTop = chatArea.scrollHeight;
+	 	recieveMessage();
+	 	// Auto scrolling to the bottom when something is entered
+	 	var chatArea = document.getElementById("chat-area");
+		chatArea.scrollTop = chatArea.scrollHeight;
   }
+}
+
+// This function helps change the chat bubble's CSS class based on how long the message is.
+// It must return a promise, otherwise the DOM will not update.
+function changeTextBubble(div, className) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+			resolve('resolved');
+			div.attr("class", className);
+    }, 1);
+  });
 }
 
 // Function that sends the information to the sever when the send button is clicked
