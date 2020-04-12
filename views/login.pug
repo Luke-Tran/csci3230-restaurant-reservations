@@ -12,10 +12,10 @@ head
   script(defer='', src='https://use.fontawesome.com/releases/v5.3.1/js/all.js')
   link(rel='stylesheet', href='styles/reviewform.css')
 h1.title Login
-form(method='get', onsubmit="reset()")
+form(method='post')
   .field
     label.label(for='the_name') Username
-    input#the_name.input(type='text', name='name')
+    input#the_name.input(type='text', name='username')
   .field
     label.label(for='the_password') Password
     input#the_password.input(type='password', name='password')

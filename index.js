@@ -38,6 +38,17 @@ app.post('/customerReservation', function (request, response) {
 	response.sendFile(__dirname + '/public/homepage.html');
 });
 
+// "Authentication" is just done locally for now
+var usernames = ['admin'];
+function usernameExists(username) {
+  for (let i = 0; i < usernames.length; i++) {
+      if (usernames[i] === username) {
+          return true;
+      }
+  }
+  return false;
+}
+
 // Display homepage 
 app.get('/', (request, response) => {
 	response.sendFile(__dirname + '/public/homepage.html');
@@ -45,8 +56,16 @@ app.get('/', (request, response) => {
 
 // Display login page
 app.get('/login', (request, response) => {
-	//response.sendFile(__dirname + '/public/pages/login.html');
 	response.render("login");
+});
+
+// Process submitted login
+app.post('/login', (request, response) => {
+	let username = request.body.username;
+	let password = request.body.password;
+	if (usernameExists(username)) {
+		response.redirect("/statsPage");
+	}
 });
 
 // Display Menu
