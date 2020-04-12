@@ -70,14 +70,14 @@
 
 /* Styles the message that the server sends to the cilent */
 #server-message {
-	display: inline;
 	color: #ff3860;
+	float: right;
 }
 
 /* Style for the time attribute that the sever sends the client */
 #server-time {
-	display: inline;
 	clear: both;
+	float: right;
 }
 
 /* Style for the messages that the client sends */
@@ -98,8 +98,8 @@
 
 /* Style of the send button */
 #chat-send-button {
-	display: inline;
 	text-align: right;
+	float: right;
 }
 
 /* Allows the send button and the input field to be in the same line */
