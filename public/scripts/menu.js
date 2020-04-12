@@ -21,9 +21,9 @@ function addCategory(category) {
   `;
   
   var categoryImg = $(imageHTML);
-  var cardContent = $('<div class="card-content"></div>');
-  var description = $(`<div class="content">${category.description}</div>`);
-  var categoryBtn = $(`<button class="button categoryBtn is-fullwidth">${category.categoryName}</button>`);
+  var cardContent = $('<table height="40%"></table>');
+  var description = $(`<tr><td class="contentCell"><div class="content">${category.description}</div></td><tr>`);
+  var categoryBtn = $(`<tr><td class="buttonCell"><button class="button categoryBtn is-fullwidth">${category.categoryName}</button></td><tr>`);
   cardContent.append(description, categoryBtn);
 
   var grid = $('#categories');
