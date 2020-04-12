@@ -131,6 +131,12 @@
   border-collapse: separate;
 }
 
+.card.large {
+	height: 450px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
 /* parallax scrolling effect */
 .parallax{
 	background-image :url('../assets/images/cn-tower-background.jpg');
