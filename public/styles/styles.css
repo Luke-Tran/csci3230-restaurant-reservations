@@ -55,6 +55,20 @@
 	color: grey;
 }
 
+/* Style the close button */
+.closeBtn {
+  cursor: pointer;
+  right: 0%;
+	padding: 0px 9px;
+	padding-bottom: 7px;
+	transform: translate(2%, -8%);
+	float: right;
+}
+
+.closeBtn:hover {
+  background-color: #d92e50;
+}
+
 /* Styles the message that the server sends to the cilent */
 #server-message {
 	display: inline;
