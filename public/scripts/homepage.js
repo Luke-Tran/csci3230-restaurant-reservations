@@ -1,27 +1,23 @@
-window.onload = function() {
-
-	console.log("Hello World");
-
-	$(document).ready(function() {
-		$('#chat').hide();
-		$("#chat-box").hide();
-  	$("#contact-us-block-button").click(function() { toggleHidden() }); // show/hide chat when contact-us is pressed
-		$("#chat-send-button").click(function() {sendButtonPressed()}); // sends message to server when the send button is pressed
-  	$("#chat-box").find("input").keypress(function(event) { enterPressed(event) }); // sends message when enter is preswsed 
-		$("#chat-banner").click(function(){toggleHiddenActiveChat()}); // Hides chat but shows banner when the banner is clicked
-	});
-	//socket.emit('send message', "Hello From Client");
-}
+$(document).ready(function() {
+	$('#chat').hide();
+	$("#chat-box").hide();
+	$("#contact-us-block-button").click(function() { toggleHidden() }); // show/hide chat when contact-us is pressed
+	$("#chat-send-button").click(function() {sendButtonPressed()}); // sends message to server when the send button is pressed
+	$("#chat-box").find("input").keypress(function(event) { enterPressed(event) }); // sends message when enter is preswsed 
+	$("#chat-banner").click(function(){toggleHiddenActiveChat()}); // Hides chat but shows banner when the banner is clicked
+	$("#chat-banner").find(".closeBtn").click(function() { toggleHidden() }); // Hides chat when the user presses the close button
+});
+//socket.emit('send message', "Hello From Client");
 
 // Function that toggles the chat from hidden to visible when the contact us button is clicked
 function toggleHidden() {
   if ($("#chat-box").is(":hidden")) {
     $("#chat-box").show();
-	 $("#chat").show();
+	 	$("#chat").show();
   }
   else {
     $("#chat-box").hide();
-	 $("#chat").hide();
+		$("#chat").hide();
   }
 }
 
@@ -45,9 +41,9 @@ async function enterPressed(event) {
 		$("#chat-area").append(textbubble);
 	 	$("#chat-area").append(`<div class="time" id="client-time">${chatTime}</div>`);
 
-		// If the text is longer than the chatbox area, use CSS that wraps the text around
-		console.log(textbubble.width());
-		if (textbubble.width() >= 220) {
+		// If the text is longer than the specified amount, use CSS that wraps the text around
+		console.log(getTextWidth(textContent, "bold 12pt arial"));
+		if (getTextWidth(textContent, "bold 12pt arial") > 247) {
 			await changeTextBubble(textbubble, "textwrap");
 		}
 
@@ -70,6 +66,17 @@ function changeTextBubble(div, className) {
 			div.attr("class", className);
     }, 1);
   });
+}
+
+// Function to get width of text 
+// https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript
+function getTextWidth(text, font) {
+	// re-use canvas object for better performance
+	var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+	var context = canvas.getContext("2d");
+	context.font = font;
+	var metrics = context.measureText(text);
+	return metrics.width;
 }
 
 // Function that sends the information to the sever when the send button is clicked

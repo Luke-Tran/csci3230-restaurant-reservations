@@ -55,16 +55,27 @@
 	color: grey;
 }
 
+/* Style the close button */
+.closeBtn {
+  cursor: pointer;
+  right: 0%;
+	padding: 0px 9px;
+	padding-bottom: 7px;
+	transform: translate(2%, -8%);
+	float: right;
+}
+.closeBtn:hover {
+  background-color: #d92e50;
+}
+
 /* Styles the message that the server sends to the cilent */
 #server-message {
-	display: inline;
-	float: right;
 	color: #ff3860;
+	float: right;
 }
 
 /* Style for the time attribute that the sever sends the client */
 #server-time {
-	display: inline;
 	clear: both;
 	float: right;
 }
@@ -87,9 +98,8 @@
 
 /* Style of the send button */
 #chat-send-button {
-	display:inline;
 	text-align: right;
-	float:right;
+	float: right;
 }
 
 /* Allows the send button and the input field to be in the same line */
