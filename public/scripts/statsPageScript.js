@@ -128,49 +128,49 @@ function praseDatabaseInformation(dataBaseObject) {
 
 	// count the number of occurances of reservations
 	for(i = 0; i < dataBaseObject.length; i++) {
-		if(dataBaseObject.getHours() == 10 && dataBaseObject.getMinutes() == 0) {
+		if(dataBaseObject[i].getHours() == 10 && dataBaseObject[i].getMinutes() == 0) {
 			counter1000 += 1;
 		} 
-		if(dataBaseObject.getHours() == 10 && dataBaseObject.getMinutes() == 45) {
+		if(dataBaseObject[i].getHours() == 10 && dataBaseObject[i].getMinutes() == 45) {
 			counter1045 += 1;
 		} 
-		if(dataBaseObject.getHours() == 11 && dataBaseObject.getMinutes() == 30) {
+		if(dataBaseObject[i].getHours() == 11 && dataBaseObject[i].getMinutes() == 30) {
 			counter1130 += 1;
 		} 
-		if(dataBaseObject.getHours() == 12 && dataBaseObject.getMinutes() == 15) {
+		if(dataBaseObject[i].getHours() == 12 && dataBaseObject[i].getMinutes() == 15) {
 			counter1215 += 1;
 		} 
-		if(dataBaseObject.getHours() == 13 && dataBaseObject.getMinutes() == 0) {
+		if(dataBaseObject.[i]getHours() == 13 && dataBaseObject[i].getMinutes() == 0) {
 			counter100 += 1;
 		} 
-		if(dataBaseObject.getHours() == 13 && dataBaseObject.getMinutes() == 45) {
+		if(dataBaseObject[i].getHours() == 13 && dataBaseObject[i].getMinutes() == 45) {
 			counter145 += 1;
 		} 
-		if(dataBaseObject.getHours() == 14 && dataBaseObject.getMinutes() == 30) {
+		if(dataBaseObject[i].getHours() == 14 && dataBaseObject[i].getMinutes() == 30) {
 			counter230 += 1;
 		} 
-		if(dataBaseObject.getHours() == 15 && dataBaseObject.getMinutes() == 15) {
+		if(dataBaseObject[i].getHours() == 15 && dataBaseObject[i].getMinutes() == 15) {
 			counter315 += 1;
 		} 
-		if(dataBaseObject.getHours() == 16 && dataBaseObject.getMinutes() == 0) {
+		if(dataBaseObject[i].getHours() == 16 && dataBaseObject[i].getMinutes() == 0) {
 			counter400 += 1;
 		} 
-		if(dataBaseObject.getHours() == 16 && dataBaseObject.getMinutes() == 45) {
+		if(dataBaseObject[i].getHours() == 16 && dataBaseObject[i].getMinutes() == 45) {
 			counter445 += 1;
 		} 
-		if(dataBaseObject.getHours() == 17 && dataBaseObject.getMinutes() == 30) {
+		if(dataBaseObject.[i]getHours() == 17 && dataBaseObject[i].getMinutes() == 30) {
 			counter530 += 1;
 		} 
-		if(dataBaseObject.getHours() == 18 && dataBaseObject.getMinutes() == 15) {
+		if(dataBaseObject[i].getHours() == 18 && dataBaseObject[i].getMinutes() == 15) {
 			counter615 += 1;
 		} 
-		if(dataBaseObject.getHours() == 19 && dataBaseObject.getMinutes() == 0) {
+		if(dataBaseObject[i].getHours() == 19 && dataBaseObject[i].getMinutes() == 0) {
 			counter700 += 1;
 		} 
-		if(dataBaseObject.getHours() == 19 && dataBaseObject.getMinutes() == 45) {
+		if(dataBaseObject[i].getHours() == 19 && dataBaseObject[i].getMinutes() == 45) {
 			counter745 += 1;
 		} 
-		if(dataBaseObject.getHours() == 20 && dataBaseObject.getMinutes() == 30) {
+		if(dataBaseObject[i].getHours() == 20 && dataBaseObject[i].getMinutes() == 30) {
 			counter830 += 1;
 		} 
 	}
