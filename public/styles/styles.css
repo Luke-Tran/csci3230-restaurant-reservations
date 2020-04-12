@@ -121,8 +121,18 @@
 #chat-banner:hover {
 	cursor:pointer;
 }
+
+/* Control the color of the menu buttons */
 .categoryBtn {
   background-color: #ffb223;
+}
+
+/* Control the alignment of the menu buttons */
+.contentCell {
+	padding-top: 10px;
+}
+.buttonCell {
+	vertical-align: bottom;
 }
 
 /* Space out the cells in the table */
