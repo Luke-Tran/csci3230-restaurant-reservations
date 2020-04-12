@@ -64,7 +64,6 @@
 	transform: translate(2%, -8%);
 	float: right;
 }
-
 .closeBtn:hover {
   background-color: #d92e50;
 }

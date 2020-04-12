@@ -5,6 +5,7 @@ $(document).ready(function() {
 	$("#chat-send-button").click(function() {sendButtonPressed()}); // sends message to server when the send button is pressed
 	$("#chat-box").find("input").keypress(function(event) { enterPressed(event) }); // sends message when enter is preswsed 
 	$("#chat-banner").click(function(){toggleHiddenActiveChat()}); // Hides chat but shows banner when the banner is clicked
+	$("#chat-banner").find(".closeBtn").click(function() { toggleHidden() }); // Hides chat when the user presses the close button
 });
 //socket.emit('send message', "Hello From Client");
 
