@@ -43,6 +43,12 @@ app.get('/', (request, response) => {
 	response.sendFile(__dirname + '/public/homepage.html');
 });
 
+// Display login page
+app.get('/login', (request, response) => {
+	//response.sendFile(__dirname + '/public/pages/login.html');
+	response.render("login");
+});
+
 // Display Menu
 app.get('/menu', (request, response) => {
 	response.sendFile(__dirname + '/public/pages/menu.html');
