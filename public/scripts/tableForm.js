@@ -47,3 +47,11 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 
 }
 
+// Function to change the colour if the table is reserved 
+function tableReserved(databaseData) {
+	for(j = 0; j < databaseData.length; j++) {
+		var tableNumber = database[j].table;
+		$("#" + tableNumber).attr("fill", "pink");
+	}
+}
+		
