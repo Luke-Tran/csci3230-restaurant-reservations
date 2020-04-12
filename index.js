@@ -53,6 +53,11 @@ app.get('/tableForm', (request, response) => {
 	response.sendFile(__dirname + '/public/pages/tableForm.html');
 });
 
+// Display the stats page
+app.get('/statsPage', (request, response) => {
+	response.sendFile(__dirname + '/public/pages/statsPage.html');
+});
+
 // Set which port to use
 app.set('port', 3000);
 
