@@ -1,3 +1,8 @@
+// TODO: add function to get the database information
+// TODO: store the database information in a variable
+// TODO: change the generate table to take in a variable
+// TODO: profit
+//
 $(document).ready(function() {
 	console.log("Hello World");
 	console.log("test");
@@ -27,15 +32,15 @@ function generateTable() {
 	];
 
 	const margin = 50;
-	const width = 1000;
+	const width = 1100;
 	const height = 500;
 	const chartWidth = width -2 * margin;
 	const chartHeight = height -2 * margin;
 
 	// Colour Scale for Testing
 	const colourScale = d3.scaleLinear()
-                          .domain([0, 10])
-                          .range(['red', 'blue']);
+                          .domain([0, 15])
+                          .range(['pink', 'red']);
 
 	const xScale = d3.scaleBand()
 							.range([0, chartWidth])
