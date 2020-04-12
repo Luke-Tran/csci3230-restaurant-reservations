@@ -122,8 +122,7 @@
 	cursor:pointer;
 }
 .categoryBtn {
-  background-color: yellow;
-  /*width: 100%;*/ /*Will use Bulma's is-fullwidth instead*/
+  background-color: #ffb223;
 }
 
 /* Space out the cells in the table */
