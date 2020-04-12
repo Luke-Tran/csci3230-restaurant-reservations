@@ -1,3 +1,6 @@
+// TODO: call the database and store the object in a variable 
+// TODO: call the tableReserved function and put the variable in the function
+// TODO: profit
 $(document).ready(function() {
 	console.log("Hello Form");
 	var longTableNumber = 1; // initialize the long talbe number
@@ -47,3 +50,13 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 
 }
 
+// Function to change the colour if the table is reserved 
+function tableReserved(databaseData) {
+	for(j = 0; j < databaseData.length; j++) {
+		if(databaseData[j].time.getHours() == 18 && databaseData[j].time.getMinutes() == 15){
+			var tableNumber = database[j].table;
+			$("#" + tableNumber).attr("fill", "pink"); // assign pink fill to all the tables in the object
+		}
+	}
+}
+		

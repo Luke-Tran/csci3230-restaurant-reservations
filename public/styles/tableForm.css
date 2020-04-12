@@ -1,16 +1,12 @@
-/* Style this bad boi */
+/* Style of the tables on the left side  */
 .left-side {
-	fill: blue;
-}
-
-.left-side:hover {
 	fill: red;
+	stroke: red;
 }
 
+/* Style the tables on the right side */
 .right-side {
-	fill: blue;
+	fill: red;
+	stroke: red;
 }
 
-.right-side:hover {
-	fill: red;
-}
