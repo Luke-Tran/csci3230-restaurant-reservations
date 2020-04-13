@@ -10,3 +10,12 @@
 	stroke: red;
 }
 
+svg{
+	padding-top: 2cm;
+	padding-left: 2cm;
+}
+
+h1{
+	font-size: 20px;
+	text-align: center;
+}
