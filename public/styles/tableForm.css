@@ -11,11 +11,12 @@
 }
 
 svg{
-	padding-top: 2cm;
-	padding-left: 2cm;
+	padding-left: 1cm;
 }
 
 h1{
 	font-size: 20px;
 	text-align: center;
+	padding-bottom: 2cm;
 }
+

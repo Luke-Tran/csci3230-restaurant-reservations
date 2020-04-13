@@ -20,8 +20,8 @@ $(document).ready(function() {
 
 // Function that generates SVGs of tables
 function generateTableRow(longTableNumber, shortTableNumber) {
-	var width = 600;
-	var height = 300;
+	var width = 500;
+	var height = 270;
 
 	// Create svg element
 	var svg = d3.select("body")
@@ -83,25 +83,25 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 	//adding chairs for right tables
 
 	svg.append("circle")
-					.attr("cx", 370)
+					.attr("cx", 345)
 					.attr("cy", 50)
 					.attr("r", 10)
 	svg.append("circle")
-					.attr("cx", 410)
+					.attr("cx", 385)
 					.attr("cy", 50)
 					.attr("r", 10)
 	svg.append("circle")
-					.attr("cx", 370)
+					.attr("cx", 345)
 					.attr("cy", 155)
 					.attr("r", 10)
 	svg.append("circle")
-					.attr("cx", 410)
+					.attr("cx", 385)
 					.attr("cy", 155)
 					.attr("r", 10)	
 
 	// Create right table 
 	svg.append("rect")
-					.attr("x", 350)
+					.attr("x", 325)
 					.attr("y", 75)
 					.attr("width", 75)
 					.attr("height", 50)
@@ -111,8 +111,8 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 }
 
 function generateBarTable(){
-	var width = 600;
-	var height = 300;
+	var width = 500;
+	var height = 270;
 
 	// Create svg element for bar 
 	var svg = d3.select("body")
