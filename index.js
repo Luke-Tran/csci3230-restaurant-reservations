@@ -35,7 +35,7 @@ app.post('/customerReservation', function (request, response) {
 			console.log(res);
 		})
 	});
-	response.sendFile(__dirname + '/public/homepage.html');
+	response.sendFile(__dirname + '/public/pages/tableForm.html');
 });
 
 // "Authentication" is just done locally for now
