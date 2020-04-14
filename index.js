@@ -28,8 +28,21 @@ app.get('/customerReservation', function (request, response) {
 
 // Store finished reservations in database
 app.post('/customerReservation', function (request, response) {
-	mongo.addReservation(request.body.firstname, request.body.lastname, "missing", 
-		request.body.guests, 0, new Date("April 18, 2020 18:30:00"))
+
+	// Format phone number to Twilio format
+	let phoneNum = request.body.tel;
+	phoneNum = "+1" + phoneNum.replace('-', '').replace('-', '');
+
+	let curDate = new Date(Date.now());
+
+	let timeslot = request.body.timeslot;
+	let hrs = timeslot.substr(0, 2);
+	let min = timeslot.substr(3);
+
+	let newDate = new Date(curDate.getFullYear(), curDate.getMonth(), curDate.getDate(), hrs, min);
+
+	mongo.addReservation(request.body.firstname, request.body.lastname, phoneNum, 
+		request.body.guests, 1, newDate)
 	.then(res => {
 		mongo.getReservationById(res).then(res => {
 			console.log(res);
