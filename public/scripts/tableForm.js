@@ -3,6 +3,11 @@
 // TODO: profit
 $(document).ready(function() {
 	console.log("Hello Form");
+	let cookies = document.cookie.split(';');
+	for(let i in cookies) {
+		
+	}
+
 	var longTableNumber = 1; // initialize the long talbe number
 	var shortTableNumber = 2; // initialise the short table numbers
 	// Loop to automatically generate the tables in rows
@@ -18,7 +23,6 @@ $(document).ready(function() {
 	});
 	fetch('reservations').then(data => {
 		data.json().then(reservations => {
-			console.log(reservations);
 			tableReserved(reservations);
 		});
 	});
@@ -158,7 +162,6 @@ function generateBarTable(){
 function tableReserved(databaseData) {
 	for(j = 0; j < databaseData.length; j++) {
 		let time = new Date(databaseData[j].time);
-		console.log(time.getHours() + " " + time.getMinutes());
 		if(time.getHours() == 18 && time.getMinutes() == 15){
 			var tableNumber = databaseData[j].table;
 			$("#" + tableNumber).attr("fill", "pink"); // assign pink fill to all the tables in the object

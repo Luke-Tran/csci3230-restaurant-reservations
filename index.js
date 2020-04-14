@@ -3,6 +3,7 @@ let app = express();
 let bodyParser = require('body-parser');
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
+let url = require('url');
 let mongo = require('./mongo');
 
 let message2 = "Hello from server";
@@ -28,7 +29,6 @@ app.get('/customerReservation', function (request, response) {
 
 // Store finished reservations in database
 app.post('/customerReservation', function (request, response) {
-
 	// Format phone number to Twilio format
 	let phoneNum = request.body.tel;
 	phoneNum = "+1" + phoneNum.replace('-', '').replace('-', '');
@@ -44,12 +44,22 @@ app.post('/customerReservation', function (request, response) {
 	mongo.addReservation(request.body.firstname, request.body.lastname, phoneNum, 
 		request.body.guests, 1, newDate)
 	.then(res => {
+		// Get reservation data
 		mongo.getReservationById(res).then(res => {
 			console.log(res);
-		})
+			// Send reservation ID to table selection form
+			response.cookie('id',encodeURIComponent(res._id), 
+			{ 
+				httpOnly: false
+			});
+			response.sendFile(__dirname + '/public/pages/tableForm.html');
+		});
 	});
-	response.sendFile(__dirname + '/public/pages/tableForm.html');
 });
+
+// app.get('/tableForm', function(request, response) {
+// 	response.sendFile(__dirname + '/public/pages/tableForm.html');
+// });
 
 app.get('/reservations', function(request, response) {
 	mongo.getSecureReservations().then(res => {
