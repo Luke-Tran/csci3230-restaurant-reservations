@@ -74,7 +74,6 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 		.attr("cx", 10)
 		.attr("cy", 95)
 		.attr("r", 10)
-	
 
 	// Create left table
 	svg.append("rect")
