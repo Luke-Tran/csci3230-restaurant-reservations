@@ -6,9 +6,13 @@ let twilioSID = process.env.TWILIO_SID;
 let twilioToken = process.env.TWILIO_TOKEN;
 
 let twilio = require("twilio")(twilioSID, twilioToken);
+let hostNum = '+16474964230'
 
-twilio.messages.create({
-	body: "Hello world",
-	from: "+16474964230",
-	to: "+16474964230"
-}).then(msg => console.log(msg));
+exports.sendReminder = function(phone, time) {
+	let text = "Reminder: Your reservation is in " + time + ".";
+	twilio.messages.create({
+		body: text,
+		from: hostNum,
+		to: phone
+	}).then(msg => console.log(msg));
+}
