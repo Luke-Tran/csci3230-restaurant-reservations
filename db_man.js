@@ -5,12 +5,22 @@ const MINUTE = 60000;
 const DAY = 86400000;
 
 
-let pruneDB = function() {
-	// TODO Remove outdated reservations
+let pruneDB = async function() {
+	let curTime = new Date(Date.now());
+	let reservations = await mongo.getAllReservations();
+	for(let i in reservations) {
+		let resTime = new Date(reservations[i].time);
+		if(curTime - resTime > DAY) {
+			console.log("Removing id " + reservations[i]._id);
+			mongo.deleteReservationById(reservations[i]._id).then(res => {
+				console.log("Response: " + res);
+			});
+		}
+	}
 }
 
 let sendSMS = async function() {
-	// TODO Send SMS messages on time
+	// TODO Send SMS messages for other times
 	let curTime = new Date(Date.now());
 	let reservations = await mongo.getAllReservations();
 	for(let i in reservations) {
@@ -21,7 +31,7 @@ let sendSMS = async function() {
 	}
 }
 
-// Prune DB once a day
+// Prune DB once a day (set to MINUTE for testing)
 setInterval(pruneDB, DAY);
 
 // Check for SMS timing every minute

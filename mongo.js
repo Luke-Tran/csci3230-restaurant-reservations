@@ -71,6 +71,10 @@ exports.getSortedReservations = async function() {
 	result = await Reservation.find({}, null, { sort:  { time: 1 } } );
 	return result;
 }
+exports.deleteReservationById = async function(id) {
+	result = await Reservation.deleteOne({ _id: id });
+	return result;
+}
 
 exports.deleteAllReservations = async function() {
 	await Reservation.deleteMany();
