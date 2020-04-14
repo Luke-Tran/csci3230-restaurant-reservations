@@ -72,11 +72,9 @@ form(method='post')
          
 
   .field
-    label.label(for='the_email') Email Address
-    input#the_email.input(type='email', name='email' required='isRequired')
-
-
+    label.label(for='the_tel') Phone Number (###-###-####)
+    input#the_tel.input(type='tel', name='tel' pattern='^\\d{3}-\\d{3}-\\d{4}$' required='isRequired')
 
   .field
-    input.button.is-primary(type="submit" value="Submit" onclick="alert('We have booked your reservation. Thank you!') & setTimeout(10000)")
+    input.button.is-primary(type="submit" value="Submit") 
 
