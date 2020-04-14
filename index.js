@@ -38,6 +38,12 @@ app.post('/customerReservation', function (request, response) {
 	response.sendFile(__dirname + '/public/pages/tableForm.html');
 });
 
+app.get('/reservations', function(request, response) {
+	mongo.getSecureReservations().then(res => {
+		response.send(res);
+	});
+});
+
 // "Authentication" is just done locally for now
 var usernames = ['admin'];
 function usernameExists(username) {

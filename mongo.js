@@ -62,6 +62,11 @@ exports.getAllReservations = async function() {
 	return result;
 }
 
+exports.getSecureReservations = async function() {
+	result = await Reservation.find({}, 'phone table time');
+	return result;
+}
+
 exports.getSortedReservations = async function() {
 	result = await Reservation.find({}, null, { sort:  { time: 1 } } );
 	return result;
