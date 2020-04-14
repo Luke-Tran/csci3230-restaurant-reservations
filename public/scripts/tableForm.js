@@ -19,7 +19,7 @@ $(document).ready(function() {
 	fetch('reservations').then(data => {
 		data.json().then(reservations => {
 			console.log(reservations);
-			//tableReserved(reservations);
+			tableReserved(reservations);
 		});
 	});
 });
@@ -152,16 +152,17 @@ function generateBarTable(){
 		.attr("y", 80)
 		.style("fill","red")
 		.text("Cash and Bar");
-
-		
 }
 
 // Function to change the colour if the table is reserved 
 function tableReserved(databaseData) {
 	for(j = 0; j < databaseData.length; j++) {
-		if(databaseData[j].time.getHours() == 18 && databaseData[j].time.getMinutes() == 15){
-			var tableNumber = database[j].table;
+		let time = new Date(databaseData[j].time);
+		console.log(time.getHours() + " " + time.getMinutes());
+		if(time.getHours() == 18 && time.getMinutes() == 15){
+			var tableNumber = databaseData[j].table;
 			$("#" + tableNumber).attr("fill", "pink"); // assign pink fill to all the tables in the object
+			$("#" + tableNumber).attr("class", ""); // temporary fix to class overriding fill change
 		}
 	}
 }
