@@ -93,7 +93,19 @@ app.post('/login', (request, response) => {
 	let username = request.body.username;
 	let password = request.body.password;
 	if (usernameExists(username)) {
-		response.redirect("/statsPage");
+		if (password != "") {
+			response.redirect("/statsPage");
+		} 
+		else {
+			response.render("login", { 
+				passwordStatus: "bad" 
+			});
+		}
+	}
+	else {
+		response.render("login", { 
+			usernameStatus: "bad" 
+		});
 	}
 });
 
