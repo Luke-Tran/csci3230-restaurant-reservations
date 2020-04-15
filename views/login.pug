@@ -15,10 +15,32 @@ h1.title Login
 form(method='post')
   .field
     label.label(for='the_name') Username
-    input#the_name.input(type='text', name='username')
+    if (usernameStatus == 'bad')
+      input#the_name.input(
+        type='text', 
+        name='username',
+        style='border: 2px solid red')
+      div(
+        class='content', 
+        style='color: red')= usernameError
+    else
+      input#the_name.input(
+        type='text', 
+        name='username')
   .field
     label.label(for='the_password') Password
-    input#the_password.input(type='password', name='password')
+    if (passwordStatus == 'bad')
+      input#the_password.input(
+        type='password', 
+        name='password',
+        style='border: 2px solid red')
+      div(
+        class='content', 
+        style='color: red')= passwordError
+    else
+      input#the_password.input(
+        type='password', 
+        name='password')
   .field
     input.button.is-primary(type="submit" value="Submit")
 
