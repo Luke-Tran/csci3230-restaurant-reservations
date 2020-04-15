@@ -98,13 +98,15 @@ app.post('/login', (request, response) => {
 		} 
 		else {
 			response.render("login", { 
-				passwordStatus: "bad" 
+				passwordStatus: "bad",
+				passwordError: "Error: Password cannot be empty"
 			});
 		}
 	}
 	else {
 		response.render("login", { 
-			usernameStatus: "bad" 
+			usernameStatus: "bad",
+			usernameError: "Error: That username does not exist"
 		});
 	}
 });

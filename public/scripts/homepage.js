@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 // Function that toggles the chat from hidden to visible when the contact us button is clicked
 function toggleHidden() {
-  if ($("#chat-box").is(":hidden")) {
+  if ($("#chat").is(":hidden")) {
     $("#chat-box").show();
 	 	$("#chat").show();
   }
