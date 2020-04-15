@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.40878906"
-     inkscape:cx="201.24224"
-     inkscape:cy="479.39068"
+     inkscape:zoom="2.7008812"
+     inkscape:cx="31.068367"
+     inkscape:cy="46.667965"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -39,7 +39,9 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:snap-global="false"
+     showguides="false" />
   <metadata
      id="metadata1168">
     <rdf:RDF>
@@ -48,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,7 +60,7 @@
      id="layer1"
      transform="translate(0,-271.73815)">
     <circle
-       style="fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:1.2402972;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#ffea00;fill-opacity:1;stroke:none;stroke-width:1.2402972;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path5844-4"
        cx="12.630934"
        cy="284.36908"
@@ -67,31 +69,19 @@
        inkscape:export-xdpi="150"
        inkscape:export-ydpi="150" />
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.37128627;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 5.6748738,277.40624 v 6.61346 l 2.122863,0.6409 v -6.67911 6.39156 l 1.90949,0.15673 v -6.61346 6.90101 l 2.2246602,-1.02225 v -6.40917"
-       id="path5838-0"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccc"
-       inkscape:export-filename="C:\Users\luket\Desktop\UI Idea.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.37128627;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 7.7977368,284.66044 v 7.04494 h 1.449847 v -6.75739 z"
-       id="path5840-7"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="C:\Users\luket\Desktop\UI Idea.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150" />
-    <path
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.10953701;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 17.063224,284.20755 c 0,0 -1.737861,8.06036 0.979729,8.08448 2.717513,0.0233 1.125443,-8.08448 1.125443,-8.08448 0,0 1.721567,-2.00113 1.49322,-3.63641 -0.228115,-1.63529 -0.813919,-3.56107 -2.4887,-3.58257 -1.67478,-0.0233 -2.452697,1.91322 -2.694778,3.58257 -0.242081,1.66935 1.585086,3.63641 1.585086,3.63641 z"
+       d="m 16.00489,284.20755 c 0,0 -1.737861,8.06036 0.979729,8.08448 2.717513,0.0233 1.125443,-8.08448 1.125443,-8.08448 0,0 1.721567,-2.00113 1.49322,-3.63641 -0.228115,-1.63529 -0.813919,-3.56107 -2.4887,-3.58257 -1.67478,-0.0233 -2.452697,1.91322 -2.694778,3.58257 -0.242081,1.66935 1.585086,3.63641 1.585086,3.63641 z"
        id="path5842-9"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="czczzzc"
        inkscape:export-filename="C:\Users\luket\Desktop\UI Idea.png"
        inkscape:export-xdpi="150"
        inkscape:export-ydpi="150" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 5.6454637,278.26262 c 0.4697364,-0.86181 1.2122161,-0.62346 1.2122161,-0.62346 0,0 -0.2110429,5.29143 -0.034635,5.50692 0.1764079,0.21549 0.7273295,0.13854 0.7273295,0.13854 0,0 0.071199,-4.05094 0.3809823,-4.71033 0.3097829,-0.65938 0.9118515,-0.60989 1.212216,-0.13857 0.3003645,0.47132 0.3463476,4.81423 0.3463476,4.81423 0,0 0.4391542,0.0507 0.7273298,-0.27708 0.288176,-0.32779 0,-5.26448 0,-5.26448 0,0 0.426186,-0.22189 1.039043,0.38098 0.612858,0.60287 0.632427,5.05998 0.173174,5.81863 -0.459252,0.75865 -1.6971026,0.83124 -1.6971026,0.83124 0,0 0.4673986,6.87942 -0.034635,7.48111 -0.502034,0.60169 -1.8734179,0.73689 -2.4244328,0 -0.5510149,-0.73689 -0.069269,-7.51574 -0.069269,-7.51574 0,0 -1.0255589,-0.18266 -1.6278331,-1.00442 -0.6022741,-0.82176 -0.4004671,-4.57576 0.069269,-5.43757 z"
+       id="path819"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zczczzczczzczzczz" />
   </g>
 </svg>
