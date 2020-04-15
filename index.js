@@ -7,6 +7,7 @@ let url = require('url');
 let mongo = require('./mongo');
 
 let message2 = "Hello from server";
+let isLoggedIn = false;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -85,7 +86,12 @@ app.get('/', (request, response) => {
 
 // Display login page
 app.get('/login', (request, response) => {
-	response.render("login");
+	if (isLoggedIn) {
+		response.redirect("/statsPage");
+	}
+	else {
+		response.render("login");
+	}
 });
 
 // Process submitted login
@@ -94,6 +100,7 @@ app.post('/login', (request, response) => {
 	let password = request.body.password;
 	if (usernameExists(username)) {
 		if (password != "") {
+			isLoggedIn = true;
 			response.redirect("/statsPage");
 		} 
 		else {
