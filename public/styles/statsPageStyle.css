@@ -21,3 +21,8 @@ html {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+/* Style for the title */
+p {
+	font-family: 'Kaushan Script', cursive;
+}
