@@ -160,8 +160,11 @@ io.on('connection', function(socket){
 					serverTime: serverTime(),
 	};
 	setTimeout(function() {io.emit('send message', data)},5000);
-	//setTimeout(function() {io.emit('send message',"time" )},1000);
-	//io.emit('send message', message);
+
+	// Function to show a user disconnected
+	socket.on('disconnect', function() {
+        console.log('User disconnected');
+    });
 
 });
 

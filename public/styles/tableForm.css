@@ -27,8 +27,14 @@ svg{
 
 /* Style for the header of the page */
 h1{
-	font-size: 20px;
+	font-size: 50px;
 	text-align: center;
 	padding-bottom: 2cm;
+	font-family: 'Kaushan Script', cursive;
+}
+
+/* Add Background Colour to the page */
+html{
+	background-color: #ADD8E6;
 }
 
