@@ -2,10 +2,23 @@
 // TODO: call the tableReserved function and put the variable in the function
 // TODO: profit
 $(document).ready(function() {
-	console.log("Hello Form");
+	// Grab reservation id from cookies
 	let cookies = document.cookie.split(';');
+	let id = '';
+	let res_time = '';
 	for(let i in cookies) {
-		
+		let cookie = cookies[i].split('=');
+		cookie[0] = cookie[0].trim();
+		cookie[1] = cookie[1].trim();
+
+		if(cookie[0] == 'id') {
+			id = decodeURIComponent(cookie[1]);
+			console.log("ID received: " + id);
+		}
+		else if(cookie[0] == 'res_time') {
+			res_time = new Date(parseInt(decodeURIComponent(cookie[1])));
+			console.log("Time received: " + res_time);
+		}
 	}
 
 	var longTableNumber = 1; // initialize the long talbe number
@@ -17,13 +30,15 @@ $(document).ready(function() {
 		shortTableNumber += 2; // Increment by 2 (short tables are even)
 	}
 	generateBarTable();
-	// click to get the id of the tables
-	$("svg").find("rect").click(function(){
-		console.log($(this).attr("id"));
+
+	// Generate table submission links
+	$("svg").find("a").click(function(){
+		let table_id = encodeURIComponent($(this).find("rect").attr("id"));
+		$(this).attr("href", "/submitTable?_id=" + id + "&table=" + table_id);
 	});
 	fetch('reservations').then(data => {
 		data.json().then(reservations => {
-			tableReserved(reservations);
+			tableReserved(reservations, res_time);
 		});
 	});
 });
@@ -81,7 +96,9 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 	
 
 	// Create left table
-	svg.append("rect")
+	svg.append("a")
+					.attr("tableID", longTableNumber)
+					.append("rect")
 					.attr("x", 50)
 					.attr("y", 50)
 					.attr("width", 130)
@@ -110,7 +127,9 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 					.attr("r", 10)	
 
 	// Create right table 
-	svg.append("rect")
+	svg.append("a")
+					.attr("tableID", shortTableNumber)
+					.append("rect")
 					.attr("x", 325)
 					.attr("y", 75)
 					.attr("width", 75)
@@ -157,18 +176,16 @@ function generateBarTable(){
 					.attr("y", 80)
 					.style("fill","red")
 					.text("Cash and Bar");
-					
-				
-
-		
 }
 
 // Function to change the colour if the table is reserved 
-function tableReserved(databaseData) {
+function tableReserved(databaseData, res_time) {
 	for(j = 0; j < databaseData.length; j++) {
 		let time = new Date(databaseData[j].time);
-		if(time.getHours() == 18 && time.getMinutes() == 15){
+		if(time.getHours() == res_time.getHours() && time.getMinutes() == res_time.getMinutes()){
 			var tableNumber = databaseData[j].table;
+			$("svg").find(`a[tableID=${tableNumber}]`).attr("style", "cursor: default");
+			$("svg").find(`a[tableID=${tableNumber}]`).attr("onclick", "return false");
 			$("#" + tableNumber).attr("fill", "pink"); // assign pink fill to all the tables in the object
 			$("#" + tableNumber).attr("class", ""); // temporary fix to class overriding fill change
 		}

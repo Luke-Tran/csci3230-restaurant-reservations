@@ -10,26 +10,29 @@ $(document).ready(function() {
 });
 
 // Function to generate the table
-function generateTable() {
+async function generateTable() {
 	
 	// TODO: Test data comment out when testing parse function
-	const reservationData = [
-		{'time': "10:00 AM", 'numberOfReservations': 10},
-		{'time': "10:45 AM", 'numberOfReservations': 3},
-		{'time': "11:30 AM", 'numberOfReservations': 5},
-		{'time': "12:15 PM", 'numberOfReservations': 7},
-		{'time': "1:00 PM", 'numberOfReservations': 7},
-		{'time': "1:45 PM", 'numberOfReservations': 10},
-		{'time': "2:30 PM", 'numberOfReservations': 10},
-		{'time': "3:15 PM", 'numberOfReservations': 3},
-		{'time': "4:00 PM", 'numberOfReservations': 5},
-		{'time': "4:45 PM", 'numberOfReservations': 7},
-		{'time': "5:30 PM", 'numberOfReservations': 7},
-		{'time': "6:15 PM", 'numberOfReservations': 3},
-		{'time': "7:00 PM", 'numberOfReservations': 5},
-		{'time': "7:45 PM", 'numberOfReservations': 7},
-		{'time': "8:15 PM", 'numberOfReservations': 7},
-	];
+	// const reservationData = [
+	// 	{'time': "10:00 AM", 'numberOfReservations': 10},
+	// 	{'time': "10:45 AM", 'numberOfReservations': 3},
+	// 	{'time': "11:30 AM", 'numberOfReservations': 5},
+	// 	{'time': "12:15 PM", 'numberOfReservations': 7},
+	// 	{'time': "1:00 PM", 'numberOfReservations': 7},
+	// 	{'time': "1:45 PM", 'numberOfReservations': 10},
+	// 	{'time': "2:30 PM", 'numberOfReservations': 10},
+	// 	{'time': "3:15 PM", 'numberOfReservations': 3},
+	// 	{'time': "4:00 PM", 'numberOfReservations': 5},
+	// 	{'time': "4:45 PM", 'numberOfReservations': 7},
+	// 	{'time': "5:30 PM", 'numberOfReservations': 7},
+	// 	{'time': "6:15 PM", 'numberOfReservations': 3},
+	// 	{'time': "7:00 PM", 'numberOfReservations': 5},
+	// 	{'time': "7:45 PM", 'numberOfReservations': 7},
+	// 	{'time': "8:15 PM", 'numberOfReservations': 7},
+	// ];
+	let dbInfo = await fetch('reservations');
+	dbInfo = await dbInfo.json();
+	const reservationData = parseDatabaseInformation(dbInfo);
 
 	const margin = 50;
 	const width = 1100;
@@ -108,7 +111,8 @@ function generateTable() {
 }
 
 // Function to generate the reservation data from the database
-function praseDatabaseInformation(dataBaseObject) {
+function parseDatabaseInformation(dataBaseObject) {
+	console.log(dataBaseObject);
 	var reservationData = [];
 	var counter1000 = 0;
 	var counter1045 = 0;
@@ -125,52 +129,54 @@ function praseDatabaseInformation(dataBaseObject) {
 	var counter700 = 0;
 	var counter745 = 0;
 	var counter830 = 0;
+	let date = '';
 
 	// count the number of occurances of reservations
 	for(i = 0; i < dataBaseObject.length; i++) {
-		if(dataBaseObject[i].time.getHours() == 10 && dataBaseObject[i].time.getMinutes() == 0) {
+		date = new Date(dataBaseObject[i].time);
+		if(date.getHours() == 10 && date.getMinutes() == 0) {
 			counter1000 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 10 && dataBaseObject[i].time.getMinutes() == 45) {
+		if(date.getHours() == 10 && date.getMinutes() == 45) {
 			counter1045 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 11 && dataBaseObject[i].time.getMinutes() == 30) {
+		if(date.getHours() == 11 && date.getMinutes() == 30) {
 			counter1130 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 12 && dataBaseObject[i].time.getMinutes() == 15) {
+		if(date.getHours() == 12 && date.getMinutes() == 15) {
 			counter1215 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 13 && dataBaseObject[i].time.getMinutes() == 0) {
+		if(date.getHours() == 13 && date.getMinutes() == 0) {
 			counter100 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 13 && dataBaseObject[i].time.getMinutes() == 45) {
+		if(date.getHours() == 13 && date.getMinutes() == 45) {
 			counter145 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 14 && dataBaseObject[i].time.getMinutes() == 30) {
+		if(date.getHours() == 14 && date.getMinutes() == 30) {
 			counter230 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 15 && dataBaseObject[i].time.getMinutes() == 15) {
+		if(date.getHours() == 15 && date.getMinutes() == 15) {
 			counter315 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 16 && dataBaseObject[i].time.getMinutes() == 0) {
+		if(date.getHours() == 16 && date.getMinutes() == 0) {
 			counter400 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 16 && dataBaseObject[i].time.getMinutes() == 45) {
+		if(date.getHours() == 16 && date.getMinutes() == 45) {
 			counter445 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 17 && dataBaseObject[i].time.getMinutes() == 30) {
+		if(date.getHours() == 17 && date.getMinutes() == 30) {
 			counter530 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 18 && dataBaseObject[i].time.getMinutes() == 15) {
+		if(date.getHours() == 18 && date.getMinutes() == 15) {
 			counter615 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 19 && dataBaseObject[i].time.getMinutes() == 0) {
+		if(date.getHours() == 19 && date.getMinutes() == 0) {
 			counter700 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 19 && dataBaseObject[i].time.getMinutes() == 45) {
+		if(date.getHours() == 19 && date.getMinutes() == 45) {
 			counter745 += 1;
 		} 
-		if(dataBaseObject[i].time.getHours() == 20 && dataBaseObject[i].time.getMinutes() == 30) {
+		if(date.getHours() == 20 && date.getMinutes() == 30) {
 			counter830 += 1;
 		} 
 	}
@@ -190,7 +196,7 @@ function praseDatabaseInformation(dataBaseObject) {
 	reservationData.push({'time': "6:15 PM", 'numberOfReservations': counter615});
 	reservationData.push({'time': "7:00 PM", 'numberOfReservations': counter700});
 	reservationData.push({'time': "7:45 PM", 'numberOfReservations': counter745});
-	reservationData.push({'time': "8:15 PM", 'numberOfReservations': counter815});
+	reservationData.push({'time': "8:15 PM", 'numberOfReservations': counter830});
 
 	return reservationData;
 }

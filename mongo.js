@@ -52,6 +52,12 @@ exports.addReservation = async function(firstName, lastName, phone, people, tabl
 	}
 }
 
+exports.setReservationTable = async function(id, table) {
+	let result = await Reservation.findById(id);
+	result.table = table;
+	await result.save();
+}
+
 exports.getReservationById = async function(id) {
 	result = await Reservation.findById(id);
 	return result;
