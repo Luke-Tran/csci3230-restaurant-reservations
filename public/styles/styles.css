@@ -175,8 +175,7 @@
 #menu-block {
 	background-image: url('../assets/images/food.jpg');
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
-
+	background-size: cover;
 }
 
 /* Menu Block Title */
@@ -210,7 +209,7 @@
 #reservation-block {
 	background-image: url('../assets/images/dining2.jpeg');
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: cover;
 }
 
 /* Reservation Block Title */
@@ -243,7 +242,7 @@
 #contact-us-block {
 	background-image: url('../assets/images/waiter.jpg');
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: cover;
 }
 
 /* Contact-Us Block Title */
@@ -315,8 +314,9 @@
 }
 
 #review-us-block {
+	background-image: url('../assets/images/cook.jpeg');
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: cover;
 }
 
 /* review-Us Block Title */

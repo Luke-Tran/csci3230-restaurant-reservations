@@ -1,22 +1,40 @@
-/* Style of the tables on the left side  */
+/* Style of the large tables */
 .left-side {
 	fill: red;
 	stroke: red;
 }
 
-/* Style the tables on the right side */
+/* Style the small tables*/
 .right-side {
 	fill: red;
 	stroke: red;
 }
 
+/* On Hover effects for the large tables */
+.left-side:hover {
+	fill:pink;
+}
+
+/* On Hover effects for the small tables */
+.right-side:hover {
+	fill: pink;
+}
+
+/* Styles for the SVG object that displays the floor plan */
 svg{
 	padding-left: 1cm;
 }
 
+/* Style for the header of the page */
 h1{
-	font-size: 20px;
+	font-size: 50px;
 	text-align: center;
 	padding-bottom: 2cm;
+	font-family: 'Kaushan Script', cursive;
+}
+
+/* Add Background Colour to the page */
+html{
+	background-color: #ADD8E6;
 }
 
