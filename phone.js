@@ -14,5 +14,5 @@ exports.sendReminder = function(phone, time) {
 		body: text,
 		from: hostNum,
 		to: phone
-	}).then(msg => console.log(msg));
+	});
 }

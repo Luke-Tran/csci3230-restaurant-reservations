@@ -43,13 +43,12 @@ app.post('/customerReservation', function (request, response) {
 	let newDate = new Date(curDate.getFullYear(), curDate.getMonth(), curDate.getDate(), hrs, min);
 
 	mongo.addReservation(request.body.firstname, request.body.lastname, phoneNum, 
-		request.body.guests, 1, newDate)
+		request.body.guests, -1, newDate, curDate)
 	.then(res => {
 		// Get reservation data
 		mongo.getReservationById(res).then(res => {
 			let res_time = new Date(res.time);
 			res_time = res_time.getTime();
-			console.log(res_time);
 			// Send reservation ID to table selection form
 			response.cookie('id',encodeURIComponent(res._id), 
 			{ 
