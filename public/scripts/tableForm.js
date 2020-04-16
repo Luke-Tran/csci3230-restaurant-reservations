@@ -3,9 +3,16 @@
 // TODO: profit
 $(document).ready(function() {
 	console.log("Hello Form");
+
+	// Grab reservation id from cookies
 	let cookies = document.cookie.split(';');
+	let id = '';
 	for(let i in cookies) {
-		
+		let cookie = cookies[i].split('=');
+		if(cookie[0] == 'id') {
+			id = cookie[1];
+		}
+		console.log("ID received: " + id);
 	}
 
 	var longTableNumber = 1; // initialize the long talbe number
@@ -17,9 +24,10 @@ $(document).ready(function() {
 		shortTableNumber += 2; // Increment by 2 (short tables are even)
 	}
 	generateBarTable();
-	// click to get the id of the tables
-	$("svg").find("rect").click(function(){
-		console.log($(this).attr("id"));
+	$("svg").find("a").click(function(){
+		let table_id = encodeURIComponent($(this).find("rect").attr("id"));
+		$(this).attr("href", "/submitTable?_id=" + id + "&table=" + table_id);
+		console.log(table_id);
 	});
 	fetch('reservations').then(data => {
 		data.json().then(reservations => {
@@ -81,7 +89,8 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 	
 
 	// Create left table
-	svg.append("rect")
+	svg.append("a")
+					.append("rect")
 					.attr("x", 50)
 					.attr("y", 50)
 					.attr("width", 130)
@@ -110,7 +119,8 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 					.attr("r", 10)	
 
 	// Create right table 
-	svg.append("rect")
+	svg.append("a")
+					.append("rect")
 					.attr("x", 325)
 					.attr("y", 75)
 					.attr("width", 75)

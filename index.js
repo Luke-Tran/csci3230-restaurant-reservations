@@ -58,9 +58,13 @@ app.post('/customerReservation', function (request, response) {
 	});
 });
 
-// app.get('/tableForm', function(request, response) {
-// 	response.sendFile(__dirname + '/public/pages/tableForm.html');
-// });
+app.get('/submitTable', function(request, response) {
+	let id = decodeURIComponent(request.query._id);
+	let table = decodeURIComponent(request.query.table);
+	console.log("Table submitting with id " + id + " and number " + table);
+	mongo.setReservationTable(id, table);
+	response.sendFile(__dirname + '/public/homepage.html');
+});
 
 app.get('/reservations', function(request, response) {
 	mongo.getSecureReservations().then(res => {
