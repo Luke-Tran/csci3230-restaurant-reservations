@@ -47,13 +47,15 @@ app.post('/customerReservation', function (request, response) {
 	.then(res => {
 		// Get reservation data
 		mongo.getReservationById(res).then(res => {
-			console.log(res);
+			let res_time = new Date(res.time);
+			res_time = res_time.getTime();
+			console.log(res_time);
 			// Send reservation ID to table selection form
 			response.cookie('id',encodeURIComponent(res._id), 
 			{ 
 				httpOnly: false
 			});
-			response.cookie('res_time',encodeURIComponent(res.time), 
+			response.cookie('res_time',encodeURIComponent(res_time), 
 			{ 
 				httpOnly: false
 			});

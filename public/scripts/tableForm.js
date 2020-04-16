@@ -2,20 +2,22 @@
 // TODO: call the tableReserved function and put the variable in the function
 // TODO: profit
 $(document).ready(function() {
-	console.log("Hello Form");
-
 	// Grab reservation id from cookies
 	let cookies = document.cookie.split(';');
 	let id = '';
 	let res_time = '';
 	for(let i in cookies) {
 		let cookie = cookies[i].split('=');
+		cookie[0] = cookie[0].trim();
+		cookie[1] = cookie[1].trim();
+
 		if(cookie[0] == 'id') {
-			id = cookie[1];
+			id = decodeURIComponent(cookie[1]);
 			console.log("ID received: " + id);
 		}
 		else if(cookie[0] == 'res_time') {
-			res_time = new Date(cookie[1]);
+			res_time = new Date(parseInt(decodeURIComponent(cookie[1])));
+			console.log("Time received: " + res_time);
 		}
 	}
 
@@ -36,7 +38,7 @@ $(document).ready(function() {
 	});
 	fetch('reservations').then(data => {
 		data.json().then(reservations => {
-			tableReserved(reservations);
+			tableReserved(reservations, res_time);
 		});
 	});
 });
@@ -95,6 +97,7 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 
 	// Create left table
 	svg.append("a")
+					.attr("tableID", longTableNumber)
 					.append("rect")
 					.attr("x", 50)
 					.attr("y", 50)
@@ -125,6 +128,7 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 
 	// Create right table 
 	svg.append("a")
+					.attr("tableID", shortTableNumber)
 					.append("rect")
 					.attr("x", 325)
 					.attr("y", 75)
@@ -172,10 +176,6 @@ function generateBarTable(){
 					.attr("y", 80)
 					.style("fill","red")
 					.text("Cash and Bar");
-					
-				
-
-		
 }
 
 // Function to change the colour if the table is reserved 
@@ -184,6 +184,8 @@ function tableReserved(databaseData, res_time) {
 		let time = new Date(databaseData[j].time);
 		if(time.getHours() == res_time.getHours() && time.getMinutes() == res_time.getMinutes()){
 			var tableNumber = databaseData[j].table;
+			$("svg").find(`a[tableID=${tableNumber}]`).attr("style", "cursor: default");
+			$("svg").find(`a[tableID=${tableNumber}]`).attr("onclick", "return false");
 			$("#" + tableNumber).attr("fill", "pink"); // assign pink fill to all the tables in the object
 			$("#" + tableNumber).attr("class", ""); // temporary fix to class overriding fill change
 		}
