@@ -22,11 +22,12 @@
 
 /* Styles for the SVG object that displays the floor plan */
 svg{
-	padding-left: 1cm;
+	padding-left: 4cm;
 }
 
 /* Style for the header of the page */
 h1{
+	color: black;
 	font-size: 50px;
 	text-align: center;
 	padding-bottom: 2cm;
@@ -35,6 +36,7 @@ h1{
 
 /* Add Background Colour to the page */
 html{
-	background-color: #ADD8E6;
+	background-color: grey;
 }
+
 

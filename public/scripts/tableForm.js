@@ -45,7 +45,7 @@ $(document).ready(function() {
 
 // Function that generates SVGs of tables
 function generateTableRow(longTableNumber, shortTableNumber) {
-	var width = 500;
+	var width = 650;
 	var height = 270;
 
 	// Create svg element
@@ -140,7 +140,7 @@ function generateTableRow(longTableNumber, shortTableNumber) {
 }
 
 function generateBarTable(){
-	var width = 500;
+	var width = 650;
 	var height = 270;
 
 	// Create svg element for bar 
