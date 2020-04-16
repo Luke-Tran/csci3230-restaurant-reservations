@@ -7,12 +7,16 @@ $(document).ready(function() {
 	// Grab reservation id from cookies
 	let cookies = document.cookie.split(';');
 	let id = '';
+	let res_time = '';
 	for(let i in cookies) {
 		let cookie = cookies[i].split('=');
 		if(cookie[0] == 'id') {
 			id = cookie[1];
+			console.log("ID received: " + id);
 		}
-		console.log("ID received: " + id);
+		else if(cookie[0] == 'res_time') {
+			res_time = new Date(cookie[1]);
+		}
 	}
 
 	var longTableNumber = 1; // initialize the long talbe number
@@ -24,10 +28,11 @@ $(document).ready(function() {
 		shortTableNumber += 2; // Increment by 2 (short tables are even)
 	}
 	generateBarTable();
+
+	// Generate table submission links
 	$("svg").find("a").click(function(){
 		let table_id = encodeURIComponent($(this).find("rect").attr("id"));
 		$(this).attr("href", "/submitTable?_id=" + id + "&table=" + table_id);
-		console.log(table_id);
 	});
 	fetch('reservations').then(data => {
 		data.json().then(reservations => {
@@ -174,10 +179,10 @@ function generateBarTable(){
 }
 
 // Function to change the colour if the table is reserved 
-function tableReserved(databaseData) {
+function tableReserved(databaseData, res_time) {
 	for(j = 0; j < databaseData.length; j++) {
 		let time = new Date(databaseData[j].time);
-		if(time.getHours() == 18 && time.getMinutes() == 15){
+		if(time.getHours() == res_time.getHours() && time.getMinutes() == res_time.getMinutes()){
 			var tableNumber = databaseData[j].table;
 			$("#" + tableNumber).attr("fill", "pink"); // assign pink fill to all the tables in the object
 			$("#" + tableNumber).attr("class", ""); // temporary fix to class overriding fill change

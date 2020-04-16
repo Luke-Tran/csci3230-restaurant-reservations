@@ -53,6 +53,10 @@ app.post('/customerReservation', function (request, response) {
 			{ 
 				httpOnly: false
 			});
+			response.cookie('res_time',encodeURIComponent(res.time), 
+			{ 
+				httpOnly: false
+			});
 			response.sendFile(__dirname + '/public/pages/tableForm.html');
 		});
 	});
