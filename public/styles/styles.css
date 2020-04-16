@@ -123,8 +123,11 @@
 }
 
 /* Control the color of the menu buttons */
-.categoryBtn {
-  background-color: #ffb223;
+.categoryLabel {
+	background-color: #ffb223;
+	text-align: center;
+	border-radius: 5px;
+	padding: 7px;
 }
 
 /* Control the alignment of the menu buttons */
