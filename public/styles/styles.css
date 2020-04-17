@@ -312,7 +312,7 @@
 	height: 50px;
 	width: 50px;
 }
-
+/*Review Us Block CSS*/
 #review-us-block {
 	background-image: url('../assets/images/cook.jpeg');
 	background-repeat: no-repeat;
@@ -345,7 +345,7 @@
 	bottom: -175px;
 }
 
-
+/*Menu image CSS*/
 .image img{
 	display: block;
   	margin-left: auto;
@@ -355,7 +355,7 @@
 	background-size: cover;
 	padding-top: 1cm;
 	}
-
+/*CSS for header description on menu page*/
 h1 {
 	font-family: 'Kaushan Script', cursive;
 	font-size: 100px;
@@ -364,6 +364,7 @@ h1 {
 	padding: 2cm;
   }
 
+/*CSS for menu.html background*/
 #menubackground {
 	background-image :url('../assets/images/cn-tower-background.jpg');
 	height: 100% auto;
@@ -373,10 +374,12 @@ h1 {
 	background-size: cover;
   }
 
+/*CSS for social media text below icons*/
 #social-media-list a{
 	color: white;
 }
 
+/*The 6ix Eatery name in specific blue colour to match the rest of the pages*/
 p{
 	color: #3273dc
 }
